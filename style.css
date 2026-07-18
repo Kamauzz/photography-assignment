@@ -11,6 +11,16 @@ header {
     padding: 2rem 1rem;
     text-align: center;
     border-bottom: 2px solid #d4af37;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.logo-container {
+    margin-top: 1rem;
+    position: relative;
 }
 
 .logo-container img {
@@ -18,13 +28,21 @@ header {
     height: 120px;
     object-fit: cover;
     border-radius: 50%;
-    margin-top: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-container img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.6);
 }
 
 .container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .bio-section {
@@ -33,8 +51,22 @@ header {
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
-    margin-bottom: 1.5rem;
     border: 1px solid #d4af37;
+    position: relative;
+    overflow: hidden;
+}
+
+.bio-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent 0%, rgba(212, 175, 55, 0.1) 50%, transparent 100%);
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.bio-section:hover::before {
+    transform: translateX(100%);
 }
 
 .gallery-section h2 {
@@ -44,8 +76,8 @@ header {
 .image-list {
     list-style: none;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
@@ -55,6 +87,13 @@ header {
     border-radius: 8px;
     box-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
     border: 1px solid #d4af37;
+    flex: 1 1 220px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.35);
 }
 
 .image-list img {
@@ -62,5 +101,10 @@ header {
     height: 180px;
     object-fit: cover;
     border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.image-list li:hover img {
+    transform: scale(1.03);
 }
 
