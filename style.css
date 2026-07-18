@@ -3,12 +3,13 @@ body {
     margin: 0;
     background: linear-gradient(135deg, #050505 0%, #1b1b1b 100%);
     color: #f7d36a;
+    padding: 0;
 }
 
 /* Style for the header section */
 header {
     background: linear-gradient(90deg, #111111 0%, #3a2a00 100%);
-    color: #f7d36a;
+    color: #f8f7f6;
     padding: 2rem 1rem;
     text-align: center;
     border-bottom: 2px solid #d4af37;
@@ -23,6 +24,10 @@ header {
 .logo-container {
     margin-top: 1rem;
     position: relative;
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+    transition: box-shadow 0.3s ease;
 }
 
 /* Style for the logo image */
@@ -32,6 +37,7 @@ header {
     object-fit: cover;
     border-radius: 50%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
 }
 
 /* Add a hover effect to the logo image */
